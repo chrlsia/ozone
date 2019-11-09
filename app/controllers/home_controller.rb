@@ -15,5 +15,20 @@ class HomeController < ApplicationController
       @final_output = @output[0]['AQI']
     end
 
+     if @final_output == 'Error'
+      @api_color ="silver"
+     elsif @final_output <=50
+      @api_color ='green'
+     elsif @final_output>=51 && @final_output<=100
+      @api_color="yellow"
+     elsif @final_output>=101 && @final_output<=150
+      @api_color="orange"
+     elsif @final_output>=151 && @final_output<=200
+      @api_color ="red"
+     elsif @final_output>=201 && @final_output<=300
+      @api_color="purle"
+     elsif @final_output>=301 && @final_output<=500
+      @api_color='maroon' 
+     end
   end
 end
