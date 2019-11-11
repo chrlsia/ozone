@@ -6,9 +6,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    
+    <%= form_tag zipcode_path, :method=>'POST' do %>
+    <div class='form-inline my-2 my-lg-0'>
+      <%= text_field_tag 'zipcode',nil,placeholder: 'Search Zipcode',clas: "form-control mr-sm-2" %>
+      <%= submit_tag 'Search', class: 'btn btn-outline-secondary my-2 my-sm-0' %>
+      <% end %>
+    </div>
+
   </div>
 </nav>

@@ -43,4 +43,15 @@ Health alert: everyone may experience more serious health effects.'
 Health warnings of emergency conditions. The entire population is more likely to be affected.'
      end
   end
+
+  def zipcode
+    @zip_query = params[:zipcode]
+
+    if params[:zipcode] == ""
+      @zip_query ="Hey you forgot to enter a zipcode!"
+    elsif params[:zipcode]
+      #Do API stuff
+    end
+
+  end
 end
